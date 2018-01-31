@@ -1,6 +1,5 @@
 from flask import Flask, request
-# import wechat.config.wechat_config as config
-import wechat.utils.token_utils as utils
+from wx.config.wechat_config import *
 import xml.etree.ElementTree as ET
 import time
 app = Flask(__name__, template_folder='pages')
@@ -23,9 +22,9 @@ def hello_world():
         to_user_name = tree.find('ToUserName').text
         from_user_name = tree.find('FromUserName').text
         content = tree.find("Content").text
-        # resp = config.text_content % (from_user_name, to_user_name, time.time(), content)
+        resp = text_content % (from_user_name, to_user_name, time.time(), content)
         # return resp
-        return ""
+        return resp
 
 
 if __name__ == '__main__':

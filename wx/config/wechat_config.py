@@ -13,7 +13,8 @@ web_token = None
 server_ip_url = 'https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=%s' % app_token
 """----------------------------menu操作url-----------------------------"""
 # 获取access_token的链接
-access_token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (app_id, app_secret)
+access_token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (
+    app_id, app_secret)
 # 创建菜单的url,post方式
 create_menu_url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s' % app_token
 # 查询菜单的url
@@ -89,11 +90,11 @@ news_content = '<xml>' \
                '</xml>'
 """----------------------------模板消息接口-----------------------------"""
 # 设置所属行业 post
-add_industry_url = 'https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=$s' % app_token
+add_industry_url = 'https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=%s' % app_token
 # 获取行业信息
 get_industry_url = 'https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=%s' % app_token
 # 获取模板id post
-get_template_id_url = 'https://api.weixin.qq.com/cgi-bin/template/api_add_template?access_token=%' % app_token
+get_template_id_url = 'https://api.weixin.qq.com/cgi-bin/template/api_add_template?access_token=%s' % app_token
 # 获取模板list
 get_template_list_url = 'https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token=%s' % app_token
 # 删除模板 post
@@ -113,9 +114,11 @@ delete_template_url = 'https://api.weixin.qq.com/cgi-bin/template/del_private_te
 send_template_url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s'
 """--------------------------------------------页面授权access_token---------------------------------"""
 # 获取code
-get_access_token_code_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect' % (app_id, '%s', '%s', '%s')
+get_access_token_code_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect' % (
+    app_id, '%s', '%s', '%s')
 # 获取access_token
-get_access_token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=CODE&grant_type=authorization_code' % (app_id, app_secret)
+get_access_token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=CODE&grant_type=authorization_code' % (
+    app_id, app_secret)
 # 获取用户的信息（单独）
 get_user_info_url = 'https://api.weixin.qq.com/sns/userinfo?access_token=%s&openid=%s&lang=zh_CN' % (web_token, '%s')
 # 校验access_token有效性
